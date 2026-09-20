@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Premium car rental booking experience — Yasu Rent Car.">
+  <title>YASU — Premium Car Rental</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" id="header">
+    <a class="logo" href="#home" aria-label="Yasu Rent Car home">
+      <span class="logo-mark">Y</span><span>YASU<span class="logo-dot">.</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navigasi utama">
+      <a href="#home" class="active">Beranda</a>
+      <a href="#fleet">Armada</a>
+      <a href="#pricing">Harga</a>
+      <a href="#about">Tentang</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+    <a class="btn btn-gold nav-cta" href="#booking">Booking Sekarang</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <a href="#home">Beranda</a><a href="#fleet">Armada</a><a href="#pricing">Harga</a>
+    <a href="#about">Tentang</a><a href="#contact">Kontak</a><a class="btn btn-gold" href="#booking">Booking Sekarang</a>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-media"></div><div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><span></span> PREMIUM CAR RENTAL</div>
+        <h1>SEWA MOBIL<br><span>MUDAH, CEPAT &</span><br><em>TERPERCAYA</em></h1>
+        <p>Tersedia berbagai pilihan mobil terbaik<br class="desktop-only"> untuk kebutuhan perjalanan Anda.</p>
+      </div>
+
+      <div class="booking-widget" id="booking">
+        <div class="booking-head"><span class="booking-step">01</span><div><small>BOOK YOUR RIDE</small><strong>Mulai perjalanan Anda</strong></div></div>
+        <form id="searchForm" class="booking-form">
+          <label class="field"><span class="field-icon">⌖</span><span><small>LOKASI JEMPUT</small><select id="pickup" required><option value="">Pilih lokasi jemput</option><option>Jakarta</option><option>Bandung</option><option>Bali</option><option>Surabaya</option></select></span></label>
+          <label class="field"><span class="field-icon">▣</span><span><small>TANGGAL JEMPUT</small><input id="startDate" type="date" required></span></label>
+          <label class="field"><span class="field-icon">▣</span><span><small>TANGGAL KEMBALI</small><input id="endDate" type="date" required></span></label>
+          <button class="btn btn-gold search-btn" type="submit">CARI MOBIL <span>→</span></button>
+        </form>
+        <div class="form-message" id="formMessage" role="status"></div>
+      </div>
+      <div class="scroll-cue">SCROLL TO EXPLORE <span>↓</span></div>
+    </section>
+
+    <section class="stats section-dark">
+      <div class="stat"><div class="stat-icon">✦</div><strong>10+</strong><span>Tahun<br>Pengalaman</span></div>
+      <div class="stat"><div class="stat-icon">♙</div><strong>5000+</strong><span>Pelanggan<br>Puas</span></div>
+      <div class="stat"><div class="stat-icon">▱</div><strong>50+</strong><span>Armada<br>Terawat</span></div>
+      <div class="stat"><div class="stat-icon">24</div><strong>Jam</strong><span>Layanan<br>Siap Bantu</span></div>
+    </section>
+
+    <section class="promo section" id="offers">
+      <div class="promo-copy"><span class="pill">LIMITED TIME OFFER</span><h2>PROMO<br><b>SPESIAL HARI INI!</b></h2><p>Sewa mobil sekarang dan dapatkan diskon spesial terbatas!</p><a class="btn btn-gold" href="#fleet">AMBIL PROMO <span>→</span></a></div>
+      <div class="discount">DISKON <strong>30%</strong></div>
+      <div class="countdown-wrap"><small>PROMO BERAKHIR DALAM</small><div class="countdown"><div><strong id="hours">08</strong><span>JAM</span></div><i>:</i><div><strong id="minutes">45</strong><span>MENIT</span></div><i>:</i><div><strong id="seconds">32</strong><span>DETIK</span></div></div></div>
+    </section>
+
+    <section class="fleet section" id="fleet">
+      <div class="section-kicker">OUR FLEET</div><div class="section-title-row"><div><h2>PILIH ARMADA<br><em>TERBAIK KAMI</em></h2></div><p>Mobil pilihan dengan kondisi prima, siap menemani setiap perjalanan Anda.</p></div>
+      <div class="filterbar">
+        <div class="chips" id="categoryFilters"><button class="chip active" data-filter="all">Semua</button><button class="chip" data-filter="mpv">MPV</button><button class="chip" data-filter="suv">SUV</button><button class="chip" data-filter="premium">Premium</button><button class="chip" data-filter="economy">Economy</button></div>
+        <select id="sortSelect"><option value="popular">Populer</option><option value="low">Harga Terendah</option><option value="high">Harga Tertinggi</option></select>
+      </div>
+      <div class="fleet-grid" id="fleetGrid"></div>
+    </section>
+
+    <section class="how section section-dark" id="how">
+      <div class="section-kicker">SIMPLE PROCESS</div><h2>CARA ORDER <em>MUDAH</em></h2>
+      <div class="steps">
+        <div class="step"><div class="step-no">01</div><div class="step-icon">▱</div><h3>Pilih Mobil</h3><p>Pilih mobil sesuai kebutuhan Anda</p></div>
+        <div class="step"><div class="step-no">02</div><div class="step-icon">□</div><h3>Pilih Tanggal</h3><p>Tentukan tanggal jemput & kembali</p></div>
+        <div class="step"><div class="step-no">03</div><div class="step-icon">♙</div><h3>Isi Data</h3><p>Lengkapi data diri dan pemesanan</p></div>
+        <div class="step"><div class="step-no">04</div><div class="step-icon">✓</div><h3>Konfirmasi</h3><p>Konfirmasi pesanan melalui WhatsApp</p></div>
+        <div class="step"><div class="step-no">05</div><div class="step-icon">→</div><h3>Siap Jalan!</h3><p>Mobil siap digunakan untuk perjalanan Anda</p></div>
+      </div>
+    </section>
+
+    <section class="testimonials section">
+      <div class="section-kicker">CUSTOMER STORIES</div><div class="section-title-row"><h2>APA KATA<br><em>PELANGGAN KAMI</em></h2><div class="carousel-controls"><button id="prevReview" aria-label="Review sebelumnya">←</button><button id="nextReview" aria-label="Review berikutnya">→</button></div></div>
+      <div class="review-grid" id="reviewGrid"></div>
+    </section>
+
+    <section class="pricing section section-dark" id="pricing">
+      <div class="section-kicker">TRANSPARENT RATES</div><h2>HARGA <em>FLEKSIBEL</em></h2>
+      <div class="price-table-wrap"><table><thead><tr><th>Vehicle</th><th>Harian</th><th>Mingguan</th><th>Bulanan</th><th></th></tr></thead><tbody id="priceTable"></tbody></table></div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="about-image"></div><div class="about-copy"><div class="section-kicker">ABOUT YASU</div><h2>PERJALANAN ANDA,<br><em>PRIORITAS KAMI.</em></h2><p>Yasu hadir dengan pengalaman lebih dari 10 tahun menghadirkan layanan rental mobil yang mudah, transparan, dan terpercaya. Setiap kendaraan dirawat secara berkala agar Anda dapat berkendara dengan tenang.</p><div class="about-points"><span>✓ Armada terawat</span><span>✓ Harga transparan</span><span>✓ Support 24 jam</span><span>✓ Proses booking mudah</span></div><a class="text-link" href="#contact">Kenal lebih dekat →</a></div>
+    </section>
+
+    <section class="faq section section-dark" id="help">
+      <div class="section-kicker">NEED TO KNOW</div><h2>PERTANYAAN <em>UMUM</em></h2>
+      <div class="faq-list">
+        <details><summary>Apa saja dokumen yang diperlukan?<span>+</span></summary><p>KTP/identitas resmi dan SIM yang masih berlaku. Dokumen tambahan dapat diminta sesuai jenis sewa.</p></details>
+        <details><summary>Apakah ada deposit?<span>+</span></summary><p>Deposit dapat berlaku berdasarkan kendaraan dan paket sewa. Detailnya ditampilkan sebelum konfirmasi booking.</p></details>
+        <details><summary>Apakah tersedia layanan antar mobil?<span>+</span></summary><p>Ya, layanan delivery/pickup dapat ditambahkan jika tersedia di lokasi yang dipilih.</p></details>
+        <details><summary>Bagaimana kebijakan pembatalan?<span>+</span></summary><p>Kebijakan pembatalan mengikuti paket dan waktu pembatalan. Syarat lengkap tersedia pada detail booking.</p></details>
+        <details><summary>Apakah tersedia driver?<span>+</span></summary><p>Layanan driver dapat dipilih sebagai layanan tambahan pada tahap extras.</p></details>
+        <details><summary>Bagaimana jika mobil terlambat dikembalikan?<span>+</span></summary><p>Keterlambatan dapat dikenakan biaya tambahan sesuai ketentuan rental yang berlaku.</p></details>
+      </div>
+    </section>
+
+    <section class="whatsapp-cta" id="contact">
+      <div><div class="section-kicker">READY WHEN YOU ARE</div><h2>BUTUH MOBIL<br><em>SEKARANG?</em></h2><p>Hubungi kami via WhatsApp, respon cepat 24 jam!</p><a class="btn btn-gold" id="waBtn" href="#" target="_blank" rel="noopener">◉ HUBUNGI WHATSAPP</a></div><div class="cta-car"></div></section>
+  </main>
+
+  <footer>
+    <div class="footer-main"><div><a class="logo" href="#home"><span class="logo-mark">Y</span><span>YASU<span class="logo-dot">.</span></span></a><p>Premium car rental untuk perjalanan yang lebih nyaman, aman, dan mudah.</p></div><div><h4>MENU</h4><a href="#home">Beranda</a><a href="#fleet">Armada</a><a href="#pricing">Harga</a><a href="#about">Tentang</a><a href="#contact">Kontak</a></div><div><h4>KONTAK KAMI</h4><span>Phone — configurable</span><span>WhatsApp — configurable</span><span>Email — configurable</span><span>Alamat — configurable</span></div><div><h4>IKUTI KAMI</h4><a href="#">Instagram</a><a href="#">Facebook</a><a href="#" id="waFooter">WhatsApp</a></div></div>
+    <div class="footer-bottom"><span>© 2026 Yasu Rent Car. All rights reserved.</span><div><a href="#">Privacy Policy</a><a href="#">Terms & Conditions</a></div></div>
+  </footer>
+
+  <div class="modal" id="vehicleModal" aria-hidden="true"><div class="modal-backdrop" data-close></div><div class="modal-card"><button class="modal-close" data-close aria-label="Tutup">×</button><div id="modalContent"></div></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
